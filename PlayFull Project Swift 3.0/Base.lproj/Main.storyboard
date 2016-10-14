@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,24 +19,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fxl-B6-llg" userLabel="URL">
-                                <frame key="frameInset" width="375" height="128"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLv-2o-Zpa">
                                 <state key="normal" title="GET"/>
+                                <connections>
+                                    <action selector="getButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ajU-UW-aNg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGq-MZ-Znh">
                                 <state key="normal" title="PUT"/>
+                                <connections>
+                                    <action selector="putButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sI2-4f-aKx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKd-gX-ONY">
                                 <state key="normal" title="POST"/>
+                                <connections>
+                                    <action selector="postButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5qx-ou-rbU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOL-Vl-30L">
                                 <state key="normal" title="PATCH"/>
+                                <connections>
+                                    <action selector="patchButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hLG-tA-151"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHu-rM-arh">
                                 <state key="normal" title="DELETE"/>
+                                <connections>
+                                    <action selector="deleteButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wxq-zR-WP3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,17 +56,12 @@
                             <constraint firstItem="BGq-MZ-Znh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7zu-1f-iQo"/>
                             <constraint firstItem="eOL-Vl-30L" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CgT-iG-sjL"/>
                             <constraint firstItem="fKd-gX-ONY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FAO-y9-jns"/>
-                            <constraint firstItem="fxl-B6-llg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Hda-C1-zpO"/>
                             <constraint firstItem="eOL-Vl-30L" firstAttribute="leading" secondItem="BGq-MZ-Znh" secondAttribute="trailing" multiplier="10:9" id="P2Z-0c-f7z"/>
                             <constraint firstItem="BGq-MZ-Znh" firstAttribute="leading" secondItem="fKd-gX-ONY" secondAttribute="trailing" multiplier="10:8" id="S5z-rm-bpH"/>
                             <constraint firstItem="xLv-2o-Zpa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ViY-mN-2sf"/>
                             <constraint firstItem="BGq-MZ-Znh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ysc-vQ-Bcu"/>
                             <constraint firstItem="XHu-rM-arh" firstAttribute="leading" secondItem="eOL-Vl-30L" secondAttribute="trailing" multiplier="10:9.5" id="cX6-j7-pSo"/>
-                            <constraint firstItem="fxl-B6-llg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cbu-9U-dkW"/>
                             <constraint firstItem="fKd-gX-ONY" firstAttribute="leading" secondItem="xLv-2o-Zpa" secondAttribute="trailing" multiplier="10:6.5" id="eFA-uM-OG9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fxl-B6-llg" secondAttribute="trailing" id="i8g-es-4UB"/>
-                            <constraint firstItem="fxl-B6-llg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="pQI-hn-U9L"/>
-                            <constraint firstItem="fxl-B6-llg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="2:10" id="tk1-TQ-faQ"/>
                         </constraints>
                     </view>
                 </viewController>
