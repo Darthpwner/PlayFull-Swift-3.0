@@ -37,31 +37,49 @@ class ViewController: UIViewController {
         print("GET TEST")
         
  //       httpRequest(request: Alamofire.Method.GET)
-        Alamofire.request("http://jsonplaceholder.typicode.com/")
+        /*Alamofire.request("http://jsonplaceholder.typicode.com/" + resourcesPlusItem.text!, parameters: [parameter.text!: parameterValue.text!])*/
+         Alamofire.request("http://jsonplaceholder.typicode.com/posts")
+         .responseJSON { response in
+         print(response.request)  // original URL request
+         
+         if let JSON = response.result.value {
+         print("JSON: \(JSON)")
+         }
+         
+         else {
+         print("Request failure")
+         }
+         
+         print("\n")
+         }
     }
     
     @IBAction func postButton(sender: AnyObject) {
         print("POST TEST")
         
 //        httpRequest(Alamofire.Method.POST)
+        Alamofire.request("http://jsonplaceholder.typicode.com/", method: .post)
     }
     
     @IBAction func putButton(sender: AnyObject) {
         print("PUT TEST")
         
   //      httpRequest(Alamofire.Method.PUT)
+        Alamofire.request("http://jsonplaceholder.typicode.com/", method: .put)
     }
     
     @IBAction func patchButton(sender: AnyObject) {
         print("PATCH TEST")
         
   //      httpRequest(Alamofire.Method.PATCH)
+        Alamofire.request("http://jsonplaceholder.typicode.com/", method: .patch)
     }
     
     @IBAction func deleteButton(sender: AnyObject) {
         print("DELETE TEST")
         
     //    httpRequest(Alamofire.Method.DELETE)
+        Alamofire.request("http://jsonplaceholder.typicode.com/", method: .patch)
     }
     
     override func viewDidLoad() {
