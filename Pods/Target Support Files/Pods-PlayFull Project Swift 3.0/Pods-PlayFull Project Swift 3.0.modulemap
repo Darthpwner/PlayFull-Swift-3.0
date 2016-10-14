@@ -1,0 +1,6 @@
+framework module Pods_PlayFull_Project_Swift_3_0 {
+  umbrella header "Pods-PlayFull Project Swift 3.0-umbrella.h"
+
+  export *
+  module * { export * }
+}
