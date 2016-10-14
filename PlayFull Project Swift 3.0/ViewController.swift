@@ -36,8 +36,6 @@ class ViewController: UIViewController {
     @IBAction func getButton(sender: AnyObject) {
         print("GET TEST")
         
- //       httpRequest(request: Alamofire.Method.GET)
-        /*Alamofire.request("http://jsonplaceholder.typicode.com/" + resourcesPlusItem.text!, parameters: [parameter.text!: parameterValue.text!])*/
          Alamofire.request("http://jsonplaceholder.typicode.com/posts")
          .responseJSON { response in
          print(response.request)  // original URL request
@@ -57,29 +55,80 @@ class ViewController: UIViewController {
     @IBAction func postButton(sender: AnyObject) {
         print("POST TEST")
         
-//        httpRequest(Alamofire.Method.POST)
-        Alamofire.request("http://jsonplaceholder.typicode.com/", method: .post)
+        Alamofire.request("http://jsonplaceholder.typicode.com/posts", method: .post)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+                    
+                else {
+                    print("Request failure")
+                }
+                
+                print("\n")
+        }
+
     }
     
     @IBAction func putButton(sender: AnyObject) {
         print("PUT TEST")
         
-  //      httpRequest(Alamofire.Method.PUT)
-        Alamofire.request("http://jsonplaceholder.typicode.com/", method: .put)
+        Alamofire.request("http://jsonplaceholder.typicode.com/posts", method: .put)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+                    
+                else {
+                    print("Request failure")
+                }
+                
+                print("\n")
+        }
     }
     
     @IBAction func patchButton(sender: AnyObject) {
         print("PATCH TEST")
         
-  //      httpRequest(Alamofire.Method.PATCH)
-        Alamofire.request("http://jsonplaceholder.typicode.com/", method: .patch)
+        Alamofire.request("http://jsonplaceholder.typicode.com/posts", method: .patch)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+                    
+                else {
+                    print("Request failure")
+                }
+                
+                print("\n")
+        }
+
     }
     
     @IBAction func deleteButton(sender: AnyObject) {
         print("DELETE TEST")
         
-    //    httpRequest(Alamofire.Method.DELETE)
-        Alamofire.request("http://jsonplaceholder.typicode.com/", method: .patch)
+        Alamofire.request("http://jsonplaceholder.typicode.com/posts", method: .delete)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+                    
+                else {
+                    print("Request failure")
+                }
+                
+                print("\n")
+        }
+
     }
     
     override func viewDidLoad() {
