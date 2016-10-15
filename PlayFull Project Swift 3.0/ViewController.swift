@@ -79,14 +79,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func getButton(sender: AnyObject) {
         print("GET TEST")
         
-         Alamofire.request("http://jsonplaceholder.typicode.com/posts/1")
+         Alamofire.request("http://jsonplaceholder.typicode.com/posts")
          .responseJSON { response in
          print(response.request)  // original URL request
          
          if let JSON = response.result.value {
             print("JSON: \(JSON)")
             
-            self.storeJsonInCell(x: JSON as! NSDictionary)
+            if let o = JSON as? NSArray {
+                print("Treat it as an array")
+            } else {
+                self.storeJsonInCell(x: JSON as! NSDictionary)
+            }
+        
             print(type(of: JSON))
          }
          
