@@ -93,7 +93,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func getButton(sender: AnyObject) {
         print("GET TEST")
         
-         Alamofire.request("http://jsonplaceholder.typicode.com/posts")
+        Alamofire.request("http://jsonplaceholder.typicode.com/posts")
+//            Alamofire.request("http://jsonplaceholder.typicode.com/comments")
          .responseJSON { response in
          print(response.request)  // original URL request
          
