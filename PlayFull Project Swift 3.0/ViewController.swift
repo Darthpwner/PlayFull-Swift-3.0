@@ -9,12 +9,22 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     @IBOutlet var resourcesPlusItem: UITextField!
     
     @IBOutlet var parameter: UITextField!
     
     @IBOutlet var parameterValue: UITextField!
+    
+    @IBOutlet var tableView: UITableView!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
     
     func httpRequest(request: Alamofire.Method) {
 /*        Alamofire.request(request, "http://jsonplaceholder.typicode.com/" + resourcesPlusItem.text!, parameters: [parameter.text!: parameterValue.text!])
