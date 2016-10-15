@@ -26,11 +26,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
+        let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
         
         cell.textLabel?.text = self.items[indexPath.row]
         
         return cell
+    }
+    
+    func storeJsonInCell(x: [NSInteger]) -> [String] {
+        return ["LOVE"]
     }
     
     func httpRequest(request: Alamofire.Method) {
@@ -58,16 +62,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
          print(response.request)  // original URL request
          
          if let JSON = response.result.value {
-         print("JSON: \(JSON)")
+            print("JSON: \(JSON)")
+            
+            print(type(of: JSON))
          }
          
          else {
-         print("Request failure")
+            print("Request failure")
          }
          
-         print("\n")
+            print("\n")
          }
     }
+    
+    
     
     @IBAction func postButton(sender: AnyObject) {
         print("POST TEST")
