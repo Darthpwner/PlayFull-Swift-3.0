@@ -34,7 +34,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func storeJsonInCell(x: Any) -> [String] {
-        print("LOVE IT")
+        print("LOVE IT: \(x)")
+        self.items = x as! [String]
+        
         return ["LOVE"]
     }
     
@@ -58,7 +60,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func getButton(sender: AnyObject) {
         print("GET TEST")
         
-         Alamofire.request("http://jsonplaceholder.typicode.com/posts")
+         Alamofire.request("http://jsonplaceholder.typicode.com/posts/1")
          .responseJSON { response in
          print(response.request)  // original URL request
          
