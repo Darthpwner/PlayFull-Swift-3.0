@@ -33,7 +33,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func storeJsonInCell(x: [NSInteger]) -> [String] {
+    func storeJsonInCell(x: Any) -> [String] {
+        print("LOVE IT")
         return ["LOVE"]
     }
     
@@ -64,6 +65,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
          if let JSON = response.result.value {
             print("JSON: \(JSON)")
             
+            self.storeJsonInCell(x: JSON)
             print(type(of: JSON))
          }
          
