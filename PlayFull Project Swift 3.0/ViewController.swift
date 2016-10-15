@@ -33,9 +33,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func storeJsonInCell(x: Any) -> [String] {
+    func storeJsonInCell(x: NSDictionary) -> [String] {
         print("LOVE IT: \(x)")
-        self.items = x as! [String]
+        
+        for(key, value) in x {
+            print("key: \(key)")
+            print("value: \(value)")
+        }
+        print("WE DONT TALK")
+        //self.items = x
         
         return ["LOVE"]
     }
@@ -67,7 +73,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
          if let JSON = response.result.value {
             print("JSON: \(JSON)")
             
-            self.storeJsonInCell(x: JSON)
+            self.storeJsonInCell(x: JSON as! NSDictionary)
             print(type(of: JSON))
          }
          
