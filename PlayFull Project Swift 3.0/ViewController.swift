@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var calledDictDirectly: Bool = true
     //End of Table View
     
-    @IBOutlet var resourcesPlusItem: UITextField!
+    @IBOutlet var item: UITextField!
     
     @IBOutlet var parameter: UITextField!
     
@@ -155,7 +155,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("GET TEST")
         
         print("OK: " + self.resource)
-        var endpoint: String = "http://jsonplaceholder.typicode.com/" + resource
+        let endpoint: String = "http://jsonplaceholder.typicode.com/" + resource + "/" + item.text!
         
         Alamofire.request(endpoint)
 //            Alamofire.request("http://jsonplaceholder.typicode.com/comments")

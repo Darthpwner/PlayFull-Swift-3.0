@@ -28,7 +28,7 @@
                                             <outlet property="delegate" destination="uMX-PR-wri" id="pU9-v6-arE"/>
                                         </connections>
                                     </pickerView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Items" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cwN-bQ-sTG">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cwN-bQ-sTG">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -134,6 +134,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="item" destination="cwN-bQ-sTG" id="2LK-nZ-CDg"/>
+                        <outlet property="parameter" destination="NIR-k2-mvr" id="Bo2-bj-Ngs"/>
+                        <outlet property="parameterValue" destination="Spr-eN-iEN" id="fUV-of-764"/>
                         <outlet property="pickerView" destination="VXS-sJ-HEj" id="OLR-ae-H83"/>
                         <outlet property="tableView" destination="PPe-3U-hbD" id="Elz-Yh-Px1"/>
                     </connections>
