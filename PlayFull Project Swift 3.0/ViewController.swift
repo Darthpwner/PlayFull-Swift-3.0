@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //
     var items: [String] = [""]
     
+    var calledDictDirectly: Bool = true
+    
     @IBOutlet var resourcesPlusItem: UITextField!
     
     @IBOutlet var parameter: UITextField!
@@ -33,11 +35,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func storeJsonInCell(x: NSDictionary) -> [String] {
-        print("LOVE IT: \(x)")
-        
+    func storeJsonInCellArray(y: NSArray) -> Void {
         //Clears out items array
         items.removeAll()
+        self.calledDictDirectly = false
+
+        for i in 0...y.count-1 {
+            storeJsonInCellDict(x: y[i] as! NSDictionary)
+        }
+        
+        self.calledDictDirectly = true
+    }
+    
+    func storeJsonInCellDict(x: NSDictionary) -> Void {
+        print("LOVE IT: \(x)")
+        
+        if(calledDictDirectly) {
+            //Clears out items array
+            items.removeAll()
+        }
+        
         self.items.append("---------------------")
         for(key, value) in x {
             print("key: \(key)")
@@ -54,9 +71,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("WE DONT TALK")
         print(self.items)
         print(self.items.count)
-        //self.items = x
-        
-        return ["LOVE"]
     }
     
     func httpRequest(request: Alamofire.Method) {
@@ -87,9 +101,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("JSON: \(JSON)")
             
             if let o = JSON as? NSArray {
-                print("Treat it as an array")
+                print("Treat it as an array: \(o[0])")
+                self.storeJsonInCellArray(y: JSON as! NSArray)
             } else {
-                self.storeJsonInCell(x: JSON as! NSDictionary)
+                self.storeJsonInCellDict(x: JSON as! NSDictionary)
             }
         
             print(type(of: JSON))
