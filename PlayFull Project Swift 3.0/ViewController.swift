@@ -50,31 +50,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     {
         if(row == 0)
         {
-            self.view.backgroundColor = UIColor.white;
+            self.view.backgroundColor = UIColor.white
             self.resource = "posts"
         }
         else if(row == 1)
         {
-            self.view.backgroundColor = UIColor.red;
+            self.view.backgroundColor = UIColor.red
             self.resource = "comments"
         }
         else if(row == 2)
         {
-            self.view.backgroundColor =  UIColor.green;
+            self.view.backgroundColor =  UIColor.green
             self.resource = "albums"
         }
         else if(row == 3)
         {
-            self.view.backgroundColor = UIColor.blue;
+            self.view.backgroundColor = UIColor.blue
             self.resource = "photos"
         }
         else if(row == 4)
         {
-            self.view.backgroundColor = UIColor.orange;
+            self.view.backgroundColor = UIColor.orange
             self.resource = "todos"
         }
         else if(row == 5) {
-            self.view.backgroundColor = UIColor.purple;
+            self.view.backgroundColor = UIColor.purple
             self.resource = "users"
         }
     }
@@ -152,7 +152,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func getButton(sender: AnyObject) {
         print("GET TEST")
         
-        Alamofire.request("http://jsonplaceholder.typicode.com/posts")
+        print("OK: " + self.resource)
+        var endpoint: String = "http://jsonplaceholder.typicode.com/" + resource
+        
+        Alamofire.request(endpoint)
 //            Alamofire.request("http://jsonplaceholder.typicode.com/comments")
          .responseJSON { response in
          print(response.request)  // original URL request
