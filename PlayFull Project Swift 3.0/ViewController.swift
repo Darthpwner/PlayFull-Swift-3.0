@@ -10,6 +10,9 @@ import UIKit
 import Alamofire
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+    //
+    var items: [String] = ["We", "Heart", "Swift"]
+    
     @IBOutlet var resourcesPlusItem: UITextField!
     
     @IBOutlet var parameter: UITextField!
@@ -19,11 +22,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var tableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        var cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
+        
+        cell.textLabel?.text = self.items[indexPath.row]
+        
+        return cell
     }
     
     func httpRequest(request: Alamofire.Method) {
