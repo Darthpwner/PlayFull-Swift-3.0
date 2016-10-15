@@ -266,10 +266,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //Picker View
         self.pickerView.dataSource = self;
         self.pickerView.delegate = self;
+        
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
         
         //Table View
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
