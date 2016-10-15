@@ -38,14 +38,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //Clears out items array
         items.removeAll()
+        self.items.append("---------------------")
         for(key, value) in x {
             print("key: \(key)")
             print("value: \(value)")
             
-            let item: String = key as! String
+            let item: String = "\(key): \(value)"
             
             self.items.append(item)
         }
+        self.items.append("---------------------")
 
         self.tableView.reloadData()
     
