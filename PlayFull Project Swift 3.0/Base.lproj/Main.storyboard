@@ -68,16 +68,40 @@
                                     <constraint firstItem="PPe-3U-hbD" firstAttribute="centerY" secondItem="eF5-nN-fCt" secondAttribute="centerY" id="HUZ-e3-eqr"/>
                                 </constraints>
                             </scrollView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uMX-PR-wri">
-                                <frame key="frameInset" minX="16" minY="21" width="343" height="266"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMX-PR-wri">
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXS-sJ-HEj"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Items" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cwN-bQ-sTG">
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Parameter" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NIR-k2-mvr">
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Parameter Value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Spr-eN-iEN">
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="NIR-k2-mvr" firstAttribute="width" secondItem="cwN-bQ-sTG" secondAttribute="width" id="2sP-Lg-EpQ"/>
+                                    <constraint firstItem="cwN-bQ-sTG" firstAttribute="height" secondItem="uMX-PR-wri" secondAttribute="height" multiplier="0.1" id="2zs-Bg-VdC"/>
+                                    <constraint firstItem="Spr-eN-iEN" firstAttribute="top" secondItem="NIR-k2-mvr" secondAttribute="bottom" multiplier="10:9" id="5wX-3N-be7"/>
+                                    <constraint firstItem="cwN-bQ-sTG" firstAttribute="top" secondItem="VXS-sJ-HEj" secondAttribute="bottom" multiplier="10:9" id="A79-lO-eXI"/>
+                                    <constraint firstItem="NIR-k2-mvr" firstAttribute="height" secondItem="cwN-bQ-sTG" secondAttribute="height" id="B0w-HL-XVf"/>
+                                    <constraint firstAttribute="bottom" secondItem="Spr-eN-iEN" secondAttribute="bottom" multiplier="10:9" id="GeH-Od-zkp"/>
+                                    <constraint firstItem="cwN-bQ-sTG" firstAttribute="leading" secondItem="NIR-k2-mvr" secondAttribute="leading" id="K2P-Vs-Vcy"/>
+                                    <constraint firstItem="cwN-bQ-sTG" firstAttribute="centerX" secondItem="VXS-sJ-HEj" secondAttribute="centerX" id="Qsd-wb-WCY"/>
+                                    <constraint firstItem="Spr-eN-iEN" firstAttribute="height" secondItem="NIR-k2-mvr" secondAttribute="height" id="WvH-Md-grz"/>
+                                    <constraint firstItem="NIR-k2-mvr" firstAttribute="top" secondItem="cwN-bQ-sTG" secondAttribute="bottom" multiplier="10:9" id="Z1J-I2-Uj6"/>
                                     <constraint firstAttribute="trailing" secondItem="VXS-sJ-HEj" secondAttribute="trailing" id="evC-Tb-b61"/>
                                     <constraint firstItem="VXS-sJ-HEj" firstAttribute="top" secondItem="uMX-PR-wri" secondAttribute="top" id="iee-yX-0uI"/>
+                                    <constraint firstItem="Spr-eN-iEN" firstAttribute="width" secondItem="NIR-k2-mvr" secondAttribute="width" id="nPf-iW-DcG"/>
                                     <constraint firstItem="VXS-sJ-HEj" firstAttribute="width" secondItem="uMX-PR-wri" secondAttribute="width" id="ois-ax-iek"/>
                                     <constraint firstItem="VXS-sJ-HEj" firstAttribute="height" secondItem="uMX-PR-wri" secondAttribute="height" multiplier="0.2" id="uBf-Bh-y3d"/>
+                                    <constraint firstItem="cwN-bQ-sTG" firstAttribute="width" secondItem="uMX-PR-wri" secondAttribute="width" multiplier="5:10" id="uJ6-ZU-bxV"/>
+                                    <constraint firstItem="cwN-bQ-sTG" firstAttribute="leading" secondItem="Spr-eN-iEN" secondAttribute="leading" id="vrz-pQ-L2s"/>
                                     <constraint firstItem="VXS-sJ-HEj" firstAttribute="leading" secondItem="uMX-PR-wri" secondAttribute="leading" id="wFn-fv-27w"/>
                                 </constraints>
                             </scrollView>
