@@ -43,6 +43,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.items.append("LOL" )
         }
 
+        self.tableView.reloadData()
+    
         print("WE DONT TALK")
         print(self.items)
         print(self.items.count)
