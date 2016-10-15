@@ -42,6 +42,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerDataSource[row]
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        if(row == 0)
+        {
+            self.view.backgroundColor = UIColor.white;
+        }
+        else if(row == 1)
+        {
+            self.view.backgroundColor = UIColor.red;
+        }
+        else if(row == 2)
+        {
+            self.view.backgroundColor =  UIColor.green;
+        }
+        else
+        {
+            self.view.backgroundColor = UIColor.blue;
+        }
+    }
     //
     
     //TableView Methods
