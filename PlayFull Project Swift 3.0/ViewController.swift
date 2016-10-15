@@ -156,7 +156,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         print("OK: " + self.resource)
         let endpoint: String = "http://jsonplaceholder.typicode.com/" + resource + "/" + item.text!
-        let parameters: Parameters = [parameter.text!: parameterValue!]
+        let parameters: Parameters = [parameter.text!: parameterValue.text!]
         
         Alamofire.request(endpoint, parameters: parameters)
 //            Alamofire.request("http://jsonplaceholder.typicode.com/comments")
