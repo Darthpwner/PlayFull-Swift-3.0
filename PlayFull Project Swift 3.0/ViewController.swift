@@ -11,7 +11,7 @@ import Alamofire
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     //
-    var items: [String] = ["We", "Heart", "Swift"]
+    var items: [String] = [""]
     
     @IBOutlet var resourcesPlusItem: UITextField!
     
@@ -36,6 +36,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func storeJsonInCell(x: NSDictionary) -> [String] {
         print("LOVE IT: \(x)")
         
+        items.removeAll()
         for(key, value) in x {
             print("key: \(key)")
             print("value: \(value)")
