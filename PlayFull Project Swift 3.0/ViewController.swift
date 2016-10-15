@@ -36,12 +36,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func storeJsonInCell(x: NSDictionary) -> [String] {
         print("LOVE IT: \(x)")
         
+        //Clears out items array
         items.removeAll()
         for(key, value) in x {
             print("key: \(key)")
             print("value: \(value)")
             
-            self.items.append("LOL" )
+            let item: String = key as! String
+            
+            self.items.append(item)
         }
 
         self.tableView.reloadData()
