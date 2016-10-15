@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //Picker View
     var pickerDataSource = ["Posts", "Comments", "Albums", "Photos", "Todos", "Users"]
     
+    var resource: String = ""
+    
     @IBOutlet weak var pickerView: UIPickerView!
     //End of Picker View
     
@@ -43,23 +45,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return pickerDataSource[row]
     }
     
+    //Updates the action when changing the Picker View
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         if(row == 0)
         {
             self.view.backgroundColor = UIColor.white;
+            self.resource = "posts"
         }
         else if(row == 1)
         {
             self.view.backgroundColor = UIColor.red;
+            self.resource = "comments"
         }
         else if(row == 2)
         {
             self.view.backgroundColor =  UIColor.green;
+            self.resource = "albums"
         }
-        else
+        else if(row == 3)
         {
             self.view.backgroundColor = UIColor.blue;
+            self.resource = "photos"
+        }
+        else if(row == 4)
+        {
+            self.view.backgroundColor = UIColor.orange;
+            self.resource = "todos"
+        }
+        else if(row == 5) {
+            self.view.backgroundColor = UIColor.purple;
+            self.resource = "users"
         }
     }
     //
