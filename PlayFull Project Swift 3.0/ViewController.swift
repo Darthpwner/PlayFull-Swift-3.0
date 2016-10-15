@@ -39,8 +39,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         for(key, value) in x {
             print("key: \(key)")
             print("value: \(value)")
+            
+            self.items.append("LOL" )
         }
+
         print("WE DONT TALK")
+        print(self.items)
+        print(self.items.count)
         //self.items = x
         
         return ["LOVE"]
