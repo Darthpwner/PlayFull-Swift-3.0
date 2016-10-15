@@ -92,6 +92,9 @@
                             <constraint firstItem="eF5-nN-fCt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yiI-ii-dEB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="PPe-3U-hbD" id="Elz-Yh-Px1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
