@@ -9,11 +9,18 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
-    //
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource  {
+    //Picker View
+    var pickerDataSource = ["Posts", "Comments", "Albums", "Photos", "Todos", "Users"]
+    
+    @IBOutlet weak var pickerView: UIPickerView!
+    //End of Picker View
+    
+    //Table View
     var items: [String] = [""]
     
     var calledDictDirectly: Bool = true
+    //End of Table View
     
     @IBOutlet var resourcesPlusItem: UITextField!
     
@@ -23,6 +30,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet var tableView: UITableView!
     
+    //PickerView Methods
+    func numberOfComponents(in: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerDataSource.count;
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String {
+        return pickerDataSource[row]
+    }
+    //
+    
+    //TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
     }
@@ -72,6 +94,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print(self.items)
         print(self.items.count)
     }
+    //End of TableView methods
     
     func httpRequest(request: Alamofire.Method) {
 /*        Alamofire.request(request, "http://jsonplaceholder.typicode.com/" + resourcesPlusItem.text!, parameters: [parameter.text!: parameterValue.text!])
@@ -203,6 +226,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Picker View
+        self.pickerView.dataSource = self;
+        self.pickerView.delegate = self;
+        
+        //Table View
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
     }

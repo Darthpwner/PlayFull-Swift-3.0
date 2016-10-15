@@ -20,57 +20,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLv-2o-Zpa">
-                                <state key="normal" title="GET"/>
-                                <connections>
-                                    <action selector="getButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ajU-UW-aNg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGq-MZ-Znh">
-                                <state key="normal" title="PUT"/>
-                                <connections>
-                                    <action selector="putButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sI2-4f-aKx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKd-gX-ONY">
-                                <state key="normal" title="POST"/>
-                                <connections>
-                                    <action selector="postButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5qx-ou-rbU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOL-Vl-30L">
-                                <state key="normal" title="PATCH"/>
-                                <connections>
-                                    <action selector="patchButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hLG-tA-151"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHu-rM-arh">
-                                <state key="normal" title="DELETE"/>
-                                <connections>
-                                    <action selector="deleteButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wxq-zR-WP3"/>
-                                </connections>
-                            </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eF5-nN-fCt">
-                                <frame key="frameInset" minY="388" width="359" height="267"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMX-PR-wri" userLabel="Top">
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PPe-3U-hbD">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXS-sJ-HEj">
                                         <connections>
-                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="dpO-8L-P3e"/>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="iZw-uU-fRH"/>
+                                            <outlet property="dataSource" destination="uMX-PR-wri" id="cdf-tu-UcL"/>
+                                            <outlet property="delegate" destination="uMX-PR-wri" id="pU9-v6-arE"/>
                                         </connections>
-                                    </tableView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="PPe-3U-hbD" firstAttribute="width" secondItem="eF5-nN-fCt" secondAttribute="width" id="4et-Ji-nCP"/>
-                                    <constraint firstItem="PPe-3U-hbD" firstAttribute="centerX" secondItem="eF5-nN-fCt" secondAttribute="centerX" id="9QV-ZB-exz"/>
-                                    <constraint firstItem="PPe-3U-hbD" firstAttribute="height" secondItem="eF5-nN-fCt" secondAttribute="height" id="DGU-ly-ubs"/>
-                                    <constraint firstItem="PPe-3U-hbD" firstAttribute="centerY" secondItem="eF5-nN-fCt" secondAttribute="centerY" id="HUZ-e3-eqr"/>
-                                </constraints>
-                            </scrollView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMX-PR-wri">
-                                <subviews>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXS-sJ-HEj"/>
+                                    </pickerView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Items" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cwN-bQ-sTG">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -105,6 +62,54 @@
                                     <constraint firstItem="VXS-sJ-HEj" firstAttribute="leading" secondItem="uMX-PR-wri" secondAttribute="leading" id="wFn-fv-27w"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLv-2o-Zpa">
+                                <state key="normal" title="GET"/>
+                                <connections>
+                                    <action selector="getButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ajU-UW-aNg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGq-MZ-Znh">
+                                <state key="normal" title="PUT"/>
+                                <connections>
+                                    <action selector="putButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sI2-4f-aKx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKd-gX-ONY">
+                                <state key="normal" title="POST"/>
+                                <connections>
+                                    <action selector="postButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5qx-ou-rbU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOL-Vl-30L">
+                                <state key="normal" title="PATCH"/>
+                                <connections>
+                                    <action selector="patchButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hLG-tA-151"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHu-rM-arh">
+                                <state key="normal" title="DELETE"/>
+                                <connections>
+                                    <action selector="deleteButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wxq-zR-WP3"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eF5-nN-fCt" userLabel="Bottom">
+                                <frame key="frameInset" minY="388" width="359" height="267"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PPe-3U-hbD">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="dpO-8L-P3e"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="iZw-uU-fRH"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PPe-3U-hbD" firstAttribute="width" secondItem="eF5-nN-fCt" secondAttribute="width" id="4et-Ji-nCP"/>
+                                    <constraint firstItem="PPe-3U-hbD" firstAttribute="centerX" secondItem="eF5-nN-fCt" secondAttribute="centerX" id="9QV-ZB-exz"/>
+                                    <constraint firstItem="PPe-3U-hbD" firstAttribute="height" secondItem="eF5-nN-fCt" secondAttribute="height" id="DGU-ly-ubs"/>
+                                    <constraint firstItem="PPe-3U-hbD" firstAttribute="centerY" secondItem="eF5-nN-fCt" secondAttribute="centerY" id="HUZ-e3-eqr"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -129,6 +134,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pickerView" destination="VXS-sJ-HEj" id="OLR-ae-H83"/>
                         <outlet property="tableView" destination="PPe-3U-hbD" id="Elz-Yh-Px1"/>
                     </connections>
                 </viewController>
