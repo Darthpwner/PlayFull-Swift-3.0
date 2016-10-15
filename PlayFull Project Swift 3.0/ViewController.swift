@@ -108,7 +108,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func storeJsonInCellDict(x: NSDictionary) -> Void {
-        print("LOVE IT: \(x)")
+        print("x: \(x)")
         
         if(calledDictDirectly) {
             //Clears out items array
@@ -128,7 +128,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         self.tableView.reloadData()
     
-        print("WE DONT TALK")
         print(self.items)
         print(self.items.count)
     }
